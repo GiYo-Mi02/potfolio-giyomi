@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,6 +6,39 @@
 
 @layer base {
   :root {
+    /* Fun Pastel Light Theme */
+    --background: 330 100% 98%; /* Very light pinkish background */
+    --foreground: 222 47% 11%; /* Dark blue-grey text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 262 83% 58%; /* Pastel Purple */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 310 50% 90%; /* Pastel Pink */
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 180 50% 90%; /* Pastel Cyan */
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
     --background: 0 0% 4%;
     --foreground: 0 0% 96%;
     --card: 0 0% 6%;
@@ -25,7 +58,6 @@
     --border: 0 0% 12%;
     --input: 0 0% 12%;
     --ring: 0 0% 96%;
-    --radius: 0.5rem;
   }
 }
 
@@ -37,8 +69,8 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-neutral-950 text-neutral-100 antialiased;
-    font-family: 'Space Grotesk', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: "Space Grotesk", sans-serif;
   }
 }
 
@@ -73,7 +105,7 @@
 }
 
 .status-pulse::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: 50%;
@@ -99,5 +131,5 @@
 
 /* Monospace font utility */
 .font-mono {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
 }

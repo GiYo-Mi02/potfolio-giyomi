@@ -50,34 +50,34 @@ const playItems: PlayItem[] = [
 
 export default function PlaySection() {
   return (
-    <section id="play" className="py-24 px-6 border-t border-white/5">
+    <section id="play" className="py-24 px-6 border-t border-border">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
             Play
           </h2>
-          <p className="text-lg text-neutral-500 max-w-xl">
+          <p className="text-lg text-muted-foreground max-w-xl">
             Side projects, experiments, and open-source contributions.
           </p>
         </div>
 
-        <div className="border-t border-white/5">
+        <div className="border-t border-border">
           {playItems.map((item) => (
             <a
               key={item.id}
               href={item.link}
-              className="group flex flex-col md:flex-row md:items-center gap-2 md:gap-8 py-6 border-b border-white/5 hover:bg-white/[0.02] transition-colors px-4 -mx-4"
+              className="group flex flex-col md:flex-row md:items-center gap-2 md:gap-8 py-6 border-b border-border hover:bg-muted/50 transition-colors px-4 -mx-4"
             >
-              <span className="text-xs font-mono uppercase tracking-wider text-neutral-600 md:w-32 shrink-0">
+              <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground md:w-32 shrink-0">
                 {item.type}
               </span>
-              <h3 className="text-lg md:text-xl font-medium group-hover:text-neutral-200 transition-colors flex-1">
+              <h3 className="text-lg md:text-xl font-medium text-foreground group-hover:text-primary transition-colors flex-1">
                 {item.title}
               </h3>
-              <p className="text-sm text-neutral-500 md:w-80 shrink-0">
+              <p className="text-sm text-muted-foreground md:w-80 shrink-0">
                 {item.description}
               </p>
-              <ArrowUpRight className="w-4 h-4 text-neutral-600 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block" />
+              <ArrowUpRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity hidden md:block" />
             </a>
           ))}
         </div>

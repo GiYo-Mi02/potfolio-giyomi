@@ -124,7 +124,7 @@ export default function BentoGrid() {
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
             Selected Work
           </h2>
-          <p className="text-lg text-neutral-500 max-w-xl">
+          <p className="text-lg text-muted-foreground max-w-xl">
             A curated collection of projects that showcase technical depth and design sensibility.
           </p>
         </div>

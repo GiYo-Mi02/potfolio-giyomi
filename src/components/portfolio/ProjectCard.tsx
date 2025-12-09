@@ -40,7 +40,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
   return (
     <button
       onClick={onClick}
-      className={`${spanClasses[project.span]} group relative overflow-hidden rounded-2xl bg-neutral-900 border border-white/5 hover:border-white/20 transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl hover:shadow-black/50 text-left`}
+      className={`${spanClasses[project.span]} group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl text-left`}
     >
       <div className={`w-full h-full ${heightClasses[project.span]} flex flex-col`}>
         {/* Mockup area */}
@@ -51,16 +51,16 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
         </div>
 
         {/* Info bar */}
-        <div className="p-4 md:p-6 border-t border-white/5">
+        <div className="p-4 md:p-6 border-t border-border">
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
               <span className={`text-xs font-mono uppercase tracking-wider ${project.accentColor.replace("bg-", "text-")}`}>
                 {project.category}
               </span>
-              <h3 className="text-lg md:text-xl font-semibold mt-1 group-hover:text-neutral-200 transition-colors">
+              <h3 className="text-lg md:text-xl font-semibold mt-1 text-foreground group-hover:text-primary transition-colors">
                 {project.title}
               </h3>
-              <p className="text-sm text-neutral-500 mt-1 line-clamp-2">
+              <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
                 {project.description}
               </p>
               {project.websiteUrl && (
@@ -76,8 +76,8 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
                 </a>
               )}
             </div>
-            <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:border-white/30">
-              <ArrowUpRight className="w-4 h-4" />
+            <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:border-primary">
+              <ArrowUpRight className="w-4 h-4 text-foreground" />
             </div>
           </div>
         </div>

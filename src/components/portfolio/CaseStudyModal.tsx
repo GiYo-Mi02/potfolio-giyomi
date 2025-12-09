@@ -35,23 +35,23 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
       onClick={onClose}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-neutral-950/90 backdrop-blur-xl" />
+      <div className="absolute inset-0 bg-background/90 backdrop-blur-xl" />
 
       {/* Modal */}
       <div
-        className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto bg-neutral-900 rounded-3xl border border-white/10 modal-enter"
+        className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto bg-card rounded-3xl border border-border modal-enter"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
+          className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-muted hover:bg-muted/80 flex items-center justify-center transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Header with mockup */}
-        <div className="h-64 md:h-80 relative overflow-hidden rounded-t-3xl bg-neutral-950">
+        <div className="h-64 md:h-80 relative overflow-hidden rounded-t-3xl bg-background">
           <CSSMockup variant={project.mockupVariant} accentColor={project.accentColor} />
         </div>
 
@@ -62,14 +62,14 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
             <span className={`text-xs font-mono uppercase tracking-wider ${project.accentColor.replace("bg-", "text-")}`}>
               {project.category}
             </span>
-            <span className="text-neutral-600">•</span>
-            <span className="text-sm text-neutral-500 font-mono">{project.year}</span>
+            <span className="text-muted-foreground">•</span>
+            <span className="text-sm text-muted-foreground font-mono">{project.year}</span>
           </div>
 
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
             {project.title}
           </h2>
-          <p className="text-lg text-neutral-400 mb-10 max-w-2xl">
+          <p className="text-lg text-muted-foreground mb-10 max-w-2xl">
             {project.description}
           </p>
 
@@ -78,7 +78,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
             {project.tech.map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1 text-xs font-mono bg-white/5 rounded-full text-neutral-400"
+                className="px-3 py-1 text-xs font-mono bg-muted rounded-full text-muted-foreground"
               >
                 {tech}
               </span>
@@ -88,22 +88,22 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
           {/* Case study sections */}
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             <div>
-              <h3 className="text-sm font-mono uppercase tracking-wider text-neutral-500 mb-4">
+              <h3 className="text-sm font-mono uppercase tracking-wider text-muted-foreground mb-4">
                 Problem
               </h3>
-              <p className="text-neutral-300 leading-relaxed">{project.problem}</p>
+              <p className="text-foreground leading-relaxed">{project.problem}</p>
             </div>
             <div>
-              <h3 className="text-sm font-mono uppercase tracking-wider text-neutral-500 mb-4">
+              <h3 className="text-sm font-mono uppercase tracking-wider text-muted-foreground mb-4">
                 Process
               </h3>
-              <p className="text-neutral-300 leading-relaxed">{project.process}</p>
+              <p className="text-foreground leading-relaxed">{project.process}</p>
             </div>
             <div>
-              <h3 className="text-sm font-mono uppercase tracking-wider text-neutral-500 mb-4">
+              <h3 className="text-sm font-mono uppercase tracking-wider text-muted-foreground mb-4">
                 Result
               </h3>
-              <p className="text-neutral-300 leading-relaxed">{project.result}</p>
+              <p className="text-foreground leading-relaxed">{project.result}</p>
             </div>
           </div>
         </div>

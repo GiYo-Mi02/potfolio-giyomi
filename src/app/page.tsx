@@ -7,7 +7,7 @@ import GrainOverlay from "@/components/portfolio/GrainOverlay";
 
 export default function Page() {
   return (
-    <main className="relative min-h-screen bg-neutral-950 text-neutral-100">
+    <main className="relative min-h-screen bg-background text-foreground">
       <GrainOverlay />
       <Navbar />
       <Hero />
