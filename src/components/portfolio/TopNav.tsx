@@ -29,11 +29,9 @@ export default function TopNav() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-center text-lg sm:text-xl md:text-2xl font-bold tracking-tight"
+          className="text-center text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-black dark:text-white"
         >
-          <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            Gio Joshua Gonzales
-          </span>
+          Gio Joshua Gonzales
         </motion.h1>
       </div>
     </motion.nav>

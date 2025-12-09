@@ -82,7 +82,7 @@ export default function LoadingScreen() {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4">
-                <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent font-mono">
+                <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-black dark:text-white font-mono">
                   <DecryptText text="Gio Joshua Gonzales" />
                 </span>
               </h1>
@@ -98,7 +98,7 @@ export default function LoadingScreen() {
                   initial={{ width: "0%" }}
                   animate={{ width: `${progress}%` }}
                   transition={{ duration: 0.5 }}
-                  className="h-full bg-gradient-to-r from-primary via-secondary to-accent rounded-full"
+                  className="h-full bg-gradient-to-r from-primary via-secondary to-accent rounded-full "
                 />
               </div>
               <motion.p
@@ -115,7 +115,7 @@ export default function LoadingScreen() {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-              className="w-8 h-8 mx-auto border-2 border-primary border-t-transparent rounded-full"
+              className="w-8 h-8 mx-auto border-2 border-primary border-t-black dark:border-white rounded-full"
             />
           </div>
         </motion.div>

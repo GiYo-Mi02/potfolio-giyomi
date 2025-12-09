@@ -2,6 +2,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import CSSMockup from "./CSSMockup";
 
 export interface Project {
   id: string;
@@ -9,6 +10,7 @@ export interface Project {
   category: string;
   description: string;
   image: string;
+  mockupVariant: "dashboard" | "ecommerce" | "saas" | "mobile";
   accentColor: string;
   span: "1x1" | "2x1" | "2x2";
   problem: string;
@@ -45,35 +47,26 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
       <div className={`w-full h-full ${heightClasses[project.span]} flex flex-col`}>
         {/* Mockup area */}
         <div className="flex-1 relative overflow-hidden bg-muted">
-          <Image
-            src={project.image}
-            alt={`${project.title} mockup`}
-            fill
-            className="object-cover transition-all duration-500 group-hover:opacity-80 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          {/* CSS Mockup - Default state */}
+          <div className="absolute inset-0 transition-all duration-700 ease-out group-hover:opacity-0 group-hover:scale-95">
+            <CSSMockup variant={project.mockupVariant} accentColor={project.accentColor} />
+          </div>
+          
+          {/* Actual Image - Reveals on hover */}
+          <div className="absolute inset-0 opacity-0 scale-110 transition-all duration-700 ease-out group-hover:opacity-100 group-hover:scale-100">
+            <Image
+              src={project.image}
+              alt={`${project.title} mockup`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
           
           {/* Year badge - always visible */}
           <div className="absolute top-4 right-4 z-10">
             <div className={`${project.accentColor} px-3 py-1 rounded-full text-xs font-mono font-semibold text-white shadow-lg`}>
               {project.year}
-            </div>
-          </div>
-          
-          {/* Tech stack overlay - shows on hover */}
-          <div className="absolute inset-0 bg-background/95 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-6">
-            <div className="text-center">
-              <p className="text-sm font-semibold text-foreground mb-3">Tech Stack</p>
-              <div className="flex flex-wrap gap-2 justify-center max-w-md">
-                {project.tech.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 rounded-full text-xs font-medium bg-muted text-foreground border border-border hover:border-primary hover:scale-110 transition-all"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
         </div>
