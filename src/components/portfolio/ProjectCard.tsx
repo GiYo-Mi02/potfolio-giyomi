@@ -1,14 +1,14 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
-import CSSMockup from "./CSSMockup";
+import Image from "next/image";
 
 export interface Project {
   id: string;
   title: string;
   category: string;
   description: string;
-  mockupVariant: "dashboard" | "ecommerce" | "saas" | "mobile";
+  image: string;
   accentColor: string;
   span: "1x1" | "2x1" | "2x2";
   problem: string;
@@ -44,10 +44,14 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
     >
       <div className={`w-full h-full ${heightClasses[project.span]} flex flex-col`}>
         {/* Mockup area */}
-        <div className="flex-1 relative overflow-hidden">
-          <div className="absolute inset-0 transition-all duration-500 group-hover:opacity-80 group-hover:scale-105">
-            <CSSMockup variant={project.mockupVariant} accentColor={project.accentColor} />
-          </div>
+        <div className="flex-1 relative overflow-hidden bg-muted">
+          <Image
+            src={project.image}
+            alt={`${project.title} mockup`}
+            fill
+            className="object-cover transition-all duration-500 group-hover:opacity-80 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
           
           {/* Year badge - always visible */}
           <div className="absolute top-4 right-4 z-10">

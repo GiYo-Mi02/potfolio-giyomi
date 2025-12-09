@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { X } from "lucide-react";
 import { Project } from "./ProjectCard";
-import CSSMockup from "./CSSMockup";
+import Image from "next/image";
 
 interface CaseStudyModalProps {
   project: Project | null;
@@ -51,8 +51,14 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
         </button>
 
         {/* Header with mockup */}
-        <div className="h-64 md:h-80 relative overflow-hidden rounded-t-3xl bg-background">
-          <CSSMockup variant={project.mockupVariant} accentColor={project.accentColor} />
+        <div className="h-64 md:h-80 relative overflow-hidden rounded-t-3xl bg-muted">
+          <Image
+            src={project.image}
+            alt={`${project.title} mockup`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+          />
         </div>
 
         {/* Content */}
