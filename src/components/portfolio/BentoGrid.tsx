@@ -118,13 +118,17 @@ export default function BentoGrid() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section id="work" className="py-24 px-6">
-      <div className="max-w-7xl mx-auto">
+    <section id="work" className="py-32 px-6 relative">
+      {/* Decorative overlays */}
+      <div className="absolute top-0 right-20 w-64 h-64 bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl animate-float-slow" />
+      <div className="absolute bottom-20 left-10 w-48 h-48 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl animate-float delay-500" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-16">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
-            Selected Work
+            <span className="inline-block animate-blur-in">Selected Work</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-xl">
+          <p className="text-lg text-muted-foreground max-w-xl animate-fade-in delay-200">
             A curated collection of projects that showcase technical depth and design sensibility.
           </p>
         </div>

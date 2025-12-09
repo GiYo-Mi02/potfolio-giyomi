@@ -50,13 +50,17 @@ const playItems: PlayItem[] = [
 
 export default function PlaySection() {
   return (
-    <section id="play" className="py-24 px-6 border-t border-border">
-      <div className="max-w-7xl mx-auto">
+    <section id="play" className="py-32 px-6 border-t border-border relative">
+      {/* Decorative overlays */}
+      <div className="absolute top-40 right-10 w-56 h-56 bg-secondary/5 dark:bg-secondary/10 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-10 left-1/3 w-40 h-40 bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl animate-float-slow delay-300" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-16">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
-            Play
+            <span className="inline-block animate-blur-in">Play</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-xl">
+          <p className="text-lg text-muted-foreground max-w-xl animate-fade-in delay-200">
             Side projects, experiments, and open-source contributions.
           </p>
         </div>
@@ -66,7 +70,7 @@ export default function PlaySection() {
             <a
               key={item.id}
               href={item.link}
-              className="group flex flex-col md:flex-row md:items-center gap-2 md:gap-8 py-6 border-b border-border hover:bg-muted/50 transition-colors px-4 -mx-4"
+              className="group flex flex-col md:flex-row md:items-center gap-2 md:gap-8 py-6 border-b border-border hover:bg-muted/50 transition-all duration-300 px-4 -mx-4 hover:translate-x-2"
             >
               <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground md:w-32 shrink-0">
                 {item.type}

@@ -7,8 +7,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tempo - Modern SaaS Starter",
-  description: "A modern full-stack starter template powered by Next.js",
+  title: "Giyomi - Full-Stack Developer & Designer",
+  description: "A modern full-stack powered by Next.js",
 };
 
 export default function RootLayout({
@@ -25,6 +25,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <a href="#main-content" className="skip-to-content">
+            Skip to main content
+          </a>
           {children}
         </ThemeProvider>
       </body>

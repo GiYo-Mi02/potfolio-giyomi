@@ -4,8 +4,12 @@ import { Github, Linkedin, Instagram, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="py-24 px-6 border-t border-border">
-      <div className="max-w-7xl mx-auto">
+    <footer id="contact" className="py-32 px-6 border-t border-border relative overflow-hidden">
+      {/* Decorative overlays */}
+      <div className="absolute top-20 left-20 w-72 h-72 bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl animate-float-slow" />
+      <div className="absolute bottom-0 right-20 w-56 h-56 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl animate-float delay-400" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* CTA */}
         <div className="mb-20">
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6">
@@ -29,24 +33,39 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <a
               href="https://github.com/GiYo-Mi02"
-              className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:border-primary hover:bg-muted transition-all"
-              aria-label="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative w-12 h-12 rounded-full border border-border flex items-center justify-center hover:border-primary hover:bg-muted transition-all duration-300 hover:scale-110 animate-bounce-on-hover"
+              aria-label="GitHub Profile"
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-foreground text-background text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                GitHub
+              </span>
             </a>
             <a
               href="https://www.linkedin.com/in/gio-joshua-gonzales-828579205/"
-              className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:border-primary hover:bg-muted transition-all"
-              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative w-12 h-12 rounded-full border border-border flex items-center justify-center hover:border-primary hover:bg-muted transition-all duration-300 hover:scale-110 animate-bounce-on-hover"
+              aria-label="LinkedIn Profile"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-foreground text-background text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                LinkedIn
+              </span>
             </a>
             <a
               href="https://www.instagram.com/itsjuice.wa/"
-              className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:border-primary hover:bg-muted transition-all"
-              aria-label="Twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative w-12 h-12 rounded-full border border-border flex items-center justify-center hover:border-primary hover:bg-muted transition-all duration-300 hover:scale-110 animate-bounce-on-hover"
+              aria-label="Instagram Profile"
             >
-              <Instagram className="w-5 h-5" />
+              <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-foreground text-background text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                Instagram
+              </span>
             </a>
           </div>
 
