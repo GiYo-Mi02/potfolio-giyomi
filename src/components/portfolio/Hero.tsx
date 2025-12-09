@@ -10,14 +10,14 @@ export default function Hero() {
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[40%] md:w-[45%] lg:w-[50%] h-[80%] hidden md:block pointer-events-none">
         <div className="relative w-full h-full">
           {/* Gradient overlay to blend with background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/80 to-transparent z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-neutral-950/50 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-550/80 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-neutral-150/50 z-10" />
           {/* Professional photo */}
           <Image
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"
+            src="/portrait.png"
             alt="Professional portrait"
             fill
-            className="object-cover object-center grayscale opacity-60"
+            className="object-cover object-center grayscale opacity-800"
             priority
           />
           {/* Subtle color tint overlay */}
@@ -30,13 +30,13 @@ export default function Hero() {
           <div className="flex items-center gap-3 mb-6">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 status-pulse" />
             <span className="text-sm text-neutral-400 font-mono">
-              Available for freelance
+              Available for freelance / Full time opportunities
             </span>
           </div>
         </div>
 
         <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.85] mb-8">
-          Senior
+          Aspiring
           <br />
           Full-Stack
           <br />
@@ -44,8 +44,8 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg md:text-xl text-neutral-400 max-w-xl mb-12">
-          Building digital products with precision and purpose. Specializing in
-          React, Node.js, and cloud architecture.
+          Building digital products with precision and purpose. Specializing in, Next,
+          React, Node.js, and Automations.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
@@ -58,7 +58,7 @@ export default function Hero() {
           </a>
           <span className="text-neutral-600">—</span>
           <span className="text-neutral-500 font-mono text-sm">
-            10+ years experience
+            8+ years experience
           </span>
         </div>
       </div>

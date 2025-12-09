@@ -16,6 +16,7 @@ export interface Project {
   result: string;
   tech: string[];
   year: string;
+  websiteUrl?: string;
 }
 
 interface ProjectCardProps {
@@ -52,7 +53,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
         {/* Info bar */}
         <div className="p-4 md:p-6 border-t border-white/5">
           <div className="flex items-start justify-between gap-4">
-            <div>
+            <div className="flex-1">
               <span className={`text-xs font-mono uppercase tracking-wider ${project.accentColor.replace("bg-", "text-")}`}>
                 {project.category}
               </span>
@@ -62,6 +63,18 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
               <p className="text-sm text-neutral-500 mt-1 line-clamp-2">
                 {project.description}
               </p>
+              {project.websiteUrl && (
+                <a
+                  href={project.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className={`inline-flex items-center gap-1 text-xs font-medium mt-2 ${project.accentColor.replace("bg-", "text-")} hover:underline`}
+                >
+                  Visit Site
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
+              )}
             </div>
             <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:border-white/30">
               <ArrowUpRight className="w-4 h-4" />

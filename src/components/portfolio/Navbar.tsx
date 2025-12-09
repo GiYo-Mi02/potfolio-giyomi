@@ -24,7 +24,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="text-xl font-semibold tracking-tight">
-          JD<span className="text-neutral-500">.</span>
+          GJG<span className="text-neutral-500">.</span>
         </a>
         <div className="hidden md:flex items-center gap-8">
           <a
