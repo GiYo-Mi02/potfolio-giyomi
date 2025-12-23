@@ -47,7 +47,7 @@ export default function TechStackLoop() {
           transition={{
             repeat: Infinity,
             repeatType: "loop",
-            duration: 40, // 4. Slower speed for better readability
+            duration: 35, // 4. Slower speed for better readability
             ease: "linear",
           }}
         >
@@ -64,7 +64,7 @@ export default function TechStackLoop() {
                   alt={tech.name}
                   width={48}
                   height={48}
-                  className="w-full h-full object-contain grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300"
+                  className="w-full h-full object-contain group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300"
                   unoptimized
                 />
               </div>
