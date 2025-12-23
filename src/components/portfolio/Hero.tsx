@@ -66,7 +66,7 @@ export default function Hero() {
           </a>
           <span className="text-muted-foreground">—</span>
           <span className="text-muted-foreground font-mono text-sm">
-            8+ years experience
+            2+ years experience
           </span>
         </div>
       </div>

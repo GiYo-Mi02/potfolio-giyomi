@@ -45,7 +45,7 @@ const highlights = [
   {
     id: 2,
     type: "stat",
-    title: "1.2K+",
+    title: "50+",
     subtitle: "Active Users",
     color: "bg-blue-500/30 dark:bg-blue-500/20",
     span: "row-span-2",
@@ -61,7 +61,7 @@ const highlights = [
   {
     id: 4,
     type: "stat",
-    title: "135+",
+    title: "30+",
     subtitle: "Projects Completed",
     color: "bg-purple-500/30 dark:bg-purple-500/20",
     span: "row-span-2",
@@ -84,7 +84,7 @@ const highlights = [
   {
     id: 7,
     type: "stat",
-    title: "40%",
+    title: "70%",
     subtitle: "Performance Boost",
     color: "bg-orange-500/30 dark:bg-orange-500/20",
     span: "row-span-2",
@@ -93,7 +93,7 @@ const highlights = [
     id: 8,
     type: "skill",
     title: "Full-Stack Development",
-    items: ["Frontend", "Backend", "Database", "DevOps"],
+    items: ["Frontend", "Backend", "Database", "AI Integration", "DevOps", "Security", "Systems Design"],
     color: "bg-cyan-500/30 dark:bg-cyan-500/20",
     span: "row-span-3",
   },

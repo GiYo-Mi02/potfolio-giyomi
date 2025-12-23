@@ -52,7 +52,7 @@ export default function About() {
               <span className="inline-block animate-blur-in">About Me</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-              I&apos;m <span className="text-foreground font-semibold">Gio</span>, a Full-Stack Developer with <span className="text-foreground font-semibold">8+ years of experience</span> shipping robust web applications.
+              I&apos;m <span className="text-foreground font-semibold">Gio</span>, a Full-Stack Developer with <span className="text-foreground font-semibold">2+ years of experience</span> shipping robust web applications.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Based in the Philippines, I bridge the gap between engineering and design, specializing in scalable solutions using <span className="text-foreground font-semibold">Next.js, React, and Node.js</span>.
