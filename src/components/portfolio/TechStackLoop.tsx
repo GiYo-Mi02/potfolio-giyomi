@@ -24,8 +24,8 @@ const techStack = [
   { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
 ];
 
-// Duplicate multiple times for seamless infinite loop
-const duplicatedStack = [...techStack, ...techStack, ...techStack];
+// 1. Duplicate only once. This is enough for most screens given the item count.
+const duplicatedStack = [...techStack, ...techStack];
 
 export default function TechStackLoop() {
   return (
@@ -35,34 +35,36 @@ export default function TechStackLoop() {
           Technologies & Tools
         </h3>
       </div>
-      <div className="relative">
+      
+      {/* Container must mask the overflow */}
+      <div className="flex overflow-hidden w-full select-none"> {/* Added select-none for UX */}
         <motion.div
-          className="flex gap-12 items-center"
+          // 2. Remove gap-12 here. We handle spacing on items to ensure the loop math is perfect.
+          className="flex flex-nowrap min-w-full"
           animate={{
-            x: ["0%", "-33.33%"],
+            x: "-50%", // 3. Move exactly 50% (the width of one full set)
           }}
           transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 10,
-              ease: "linear",
-            },
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 40, // 4. Slower speed for better readability
+            ease: "linear",
           }}
         >
           {duplicatedStack.map((tech, index) => (
             <div
               key={index}
-              className="flex-shrink-0 flex flex-col items-center gap-3 group"
+              // 5. Add pr-12 (padding-right) here to replace the parent gap
+              className="flex-shrink-0 flex flex-col items-center gap-3 group pr-12"
               title={tech.name}
             >
-              <div className="w-16 h-16 flex items-center justify-center p-3 rounded-2xl border border-border bg-card hover:border-primary hover:scale-110 transition-all duration-300">
+              <div className="w-16 h-16 flex items-center justify-center p-3 rounded-2xl border border-border bg-card hover:border-primary transition-colors duration-300">
                 <Image
                   src={tech.logo}
                   alt={tech.name}
                   width={48}
                   height={48}
-                  className="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                  className="w-full h-full object-contain grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300"
                   unoptimized
                 />
               </div>
@@ -72,11 +74,10 @@ export default function TechStackLoop() {
             </div>
           ))}
         </motion.div>
-
-        {/* Gradient fade edges */}
-        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-background to-transparent pointer-events-none" />
-        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-background to-transparent pointer-events-none" />
       </div>
+
+       {/* Optional: Gradient fade edges for polish */}
+       {/* Ensure parent section has `relative` to position these */}
     </section>
   );
 }
