@@ -101,19 +101,19 @@ export default function About() {
             <div className="space-y-4 relative z-10">
               <div className="flex items-center justify-between p-3 rounded-lg bg-background/30 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors">
                 <span className="text-muted-foreground">Projects Delivered</span>
-                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">50+</span>
+                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">30+</span>
               </div>
               <div className="flex items-center justify-between p-3 rounded-lg bg-background/30 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors">
                 <span className="text-muted-foreground">Active Users Reached</span>
-                <span className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">10K+</span>
+                <span className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">200+</span>
               </div>
               <div className="flex items-center justify-between p-3 rounded-lg bg-background/30 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors">
                 <span className="text-muted-foreground">Years Experience</span>
-                <span className="text-2xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">8+</span>
+                <span className="text-2xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">2+</span>
               </div>
               <div className="flex items-center justify-between p-3 rounded-lg bg-background/30 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors">
                 <span className="text-muted-foreground">Technologies Mastered</span>
-                <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">18+</span>
+                <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">10+</span>
               </div>
             </div>
           </div>

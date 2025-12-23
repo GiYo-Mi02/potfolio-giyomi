@@ -24,60 +24,67 @@ const techStack = [
   { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
 ];
 
-// 1. Duplicate only once. This is enough for most screens given the item count.
 const duplicatedStack = [...techStack, ...techStack];
 
 export default function TechStackLoop() {
   return (
     <section className="py-16 overflow-hidden border-y border-border bg-muted/30">
+      <style jsx>{`
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 40s linear infinite;
+        }
+        .group:hover .animate-marquee {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       <div className="mb-8 text-center">
         <h3 className="text-sm font-mono uppercase tracking-wider text-muted-foreground mb-2">
           Technologies & Tools
         </h3>
       </div>
-      
-      {/* Container must mask the overflow */}
-      <div className="flex overflow-hidden w-full select-none"> {/* Added select-none for UX */}
-        <motion.div
-          // 2. Remove gap-12 here. We handle spacing on items to ensure the loop math is perfect.
-          className="flex flex-nowrap min-w-full"
-          animate={{
-            x: "-50%", // 3. Move exactly 50% (the width of one full set)
-          }}
-          transition={{
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 35, // 4. Slower speed for better readability
-            ease: "linear",
-          }}
-        >
+
+      {/* FIX: Added 'py-4' (padding-y-4) to this container. 
+          This creates extra vertical space inside the overflow-hidden area,
+          accommodating the upward movement on hover. */}
+      <div 
+        className="group relative flex overflow-hidden w-full select-none py-4"
+        style={{
+          maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
+        }}
+      >
+        <div className="flex flex-nowrap w-max animate-marquee">
           {duplicatedStack.map((tech, index) => (
             <div
               key={index}
-              // 5. Add pr-12 (padding-right) here to replace the parent gap
-              className="flex-shrink-0 flex flex-col items-center gap-3 group pr-12"
-              title={tech.name}
+              className="flex-shrink-0 flex flex-col items-center gap-3 pr-12 group/item cursor-pointer"
             >
-              <div className="w-16 h-16 flex items-center justify-center p-3 rounded-2xl border border-border bg-card hover:border-primary transition-colors duration-300">
+              {/* The hover effect moves it up by 5px (y: -5) */}
+              <motion.div 
+                className="w-16 h-16 flex items-center justify-center p-3 rounded-2xl border border-border bg-card transition-colors duration-300 hover:border-primary"
+                whileHover={{ scale: 1.1, y: -5 }}
+              >
                 <Image
                   src={tech.logo}
                   alt={tech.name}
                   width={48}
                   height={48}
-                  className="w-full h-full object-contain group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300"
+                  className="w-full h-full object-contain grayscale group-hover/item:grayscale-0 transition-all duration-300"
                   unoptimized
                 />
-              </div>
-              <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap">
+              </motion.div>
+              <span className="text-xs font-medium text-muted-foreground group-hover/item:text-foreground transition-colors whitespace-nowrap">
                 {tech.name}
               </span>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
-
-       {/* Optional: Gradient fade edges for polish */}
-       {/* Ensure parent section has `relative` to position these */}
     </section>
   );
 }
